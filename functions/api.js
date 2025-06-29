@@ -1,7 +1,4 @@
-// functions/api.js
-
-// This file contains the logic for our serverless function.
-// It replaces the original server.js file for deploying on Netlify.
+// functions/api.js (Corrected Version)
 
 const express = require('express');
 const serverless = require('serverless-http');
@@ -10,30 +7,32 @@ const fetch = require('node-fetch');
 // Create an instance of the Express application.
 const app = express();
 
-// Middleware to parse JSON request bodies.
-app.use(express.json());
-
-// We create a router to handle our API endpoints.
+// Create an Express router. A router is a mini-app that can handle requests.
 const router = express.Router();
 
-/**
- * @route   POST /api/chat
- * @desc    Acts as a secure proxy to the OpenAI Chat Completions API.
- * The keys are read from Netlify's environment variables.
- */
+// Define the /chat route on the router.
+// The path is relative to where the router is mounted.
 router.post('/chat', async (req, res) => {
     try {
         const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                // Keys are read securely from Netlify's environment variables
                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
             },
             body: JSON.stringify(req.body)
         });
 
+        // Handle potential errors from the OpenAI API itself
+        if (!openaiResponse.ok) {
+            const errorData = await openaiResponse.json();
+            console.error("OpenAI API Error:", errorData);
+            return res.status(openaiResponse.status).json(errorData);
+        }
+
         const data = await openaiResponse.json();
-        res.status(openaiResponse.status).json(data);
+        res.status(200).json(data);
 
     } catch (error) {
         console.error('Error in /chat function:', error);
@@ -41,12 +40,9 @@ router.post('/chat', async (req, res) => {
     }
 });
 
-/**
- * @route   POST /api/log
- * @desc    Acts as a secure proxy to the Supabase API for logging.
- */
-router.post('/log', async (req, res) => {
-    try {
+// Define the /log route on the router.
+router.log('/log', async (req, res) => {
+     try {
         const supabaseResponse = await fetch(`${process.env.SUPABASE_URL}/rest/v1/conversations`, {
             method: 'POST',
             headers: {
@@ -71,10 +67,10 @@ router.post('/log', async (req, res) => {
     }
 });
 
-// Mount the router on the /api path.
-// The redirect rule in netlify.toml ensures requests to /api/* are sent here.
-app.use('/.netlify/functions/api', router);
+// Tell the main app to use our router. The '/api/' part is handled by the
+// redirect rule in netlify.toml, so we mount it at the root here.
+app.use(express.json()); // Make sure this is before the router
+app.use('/', router);
 
-// Export the app wrapped in the serverless-http handler.
-// This is the required format for Netlify Functions to work with Express.
+// This is the required export for Netlify Functions.
 module.exports.handler = serverless(app);
