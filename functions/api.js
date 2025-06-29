@@ -41,7 +41,8 @@ router.post('/chat', async (req, res) => {
 });
 
 // Define the /log route on the router.
-router.log('/log', async (req, res) => {
+// The typo 'router.log' is now corrected to 'router.post'
+router.post('/log', async (req, res) => {
      try {
         const supabaseResponse = await fetch(`${process.env.SUPABASE_URL}/rest/v1/conversations`, {
             method: 'POST',
