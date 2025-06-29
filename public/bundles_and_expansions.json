@@ -1,0 +1,20 @@
+{
+  "bundles": [
+    {
+      "name": "SynthMaster Everything Bundle",
+      "tagline": "Great choice for ultimate music production",
+      "description": "Comes with SynthMaster One, SynthMaster 2, SynthMaster 3 and all current / future presets banks released by KV331 Audio.",
+      "link": "https://www.kv331audio.com/synthmastereverythingbundle.aspx"
+    },
+    {
+      "name": "SynthMaster Producer Bundle",
+      "tagline": "3 GREAT PLUGINS WITH 10 EXPANSION PACKS INCLUDED",
+      "description": "Comes with SynthMaster One, SynthMaster 2, SynthMaster 3 and 10 preset expansion banks of your choice.",
+      "link": "https://www.kv331audio.com/synthmasterstandardbundle.aspx"
+    }
+  ],
+  "expansionPacks": {
+      "synthMaster2": "There are 38 preset expansion banks for SynthMaster 2.",
+      "synthMasterOne": "There are 14 expansion banks for SynthMaster One."
+  }
+}

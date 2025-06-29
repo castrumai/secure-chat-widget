@@ -1,0 +1,22 @@
+{
+  "name": "secure-kv331-widget-netlify",
+  "version": "1.0.0",
+  "description": "A secure chat widget with a Netlify Functions backend.",
+  "main": "functions/api.js",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.7.0",
+    "serverless-http": "^3.2.0"
+  },
+  "keywords": [
+    "chat",
+    "security",
+    "api",
+    "netlify"
+  ],
+  "author": "",
+  "license": "ISC"
+}

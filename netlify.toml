@@ -1,0 +1,24 @@
+# netlify.toml
+
+# This section defines the main build settings for your site.
+[build]
+  # This command tells Netlify how to prepare your site. Since we have no build step, it's empty.
+  command = ""
+  
+  # This tells Netlify where your serverless functions are located.
+  functions = "functions/"
+  
+  # This tells Netlify which folder contains the static part of your website to be served.
+  publish = "public/"
+
+# This section defines how Netlify should handle redirects and rewrites.
+[[redirects]]
+  # This rule takes any request that starts with /api/
+  from = "/api/*"
+  
+  # ...and rewrites it to be handled by our serverless function.
+  # The :splat is a placeholder for whatever comes after /api/.
+  to = "/.netlify/functions/api/:splat"
+  
+  # A 200 status code means this is a rewrite, not a permanent redirect.
+  status = 200

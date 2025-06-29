@@ -1,0 +1,38 @@
+{
+  "products": {
+    "desktop": [
+      {
+        "name": "SynthMaster 3",
+        "tagline": "Powerful all-around synth with modular architecture",
+        "description": "KV331 Audio's flagship all-around modular software synthesizer available in VST2, VST3, AudioUnits and AAX formats. It features many different synthesis methods including VAnalog, Additive, Vector, Wavetable, Granular, Phase Modulation, Phase Distortion, Frequency Modulation, Pulse Width Modulation, Ring Modulation, Physical Modeling and SFZ Sample Playback.",
+        "link": "https://www.kv331audio.com/synthmaster3.aspx"
+      },
+      {
+        "name": "SynthMaster One",
+        "tagline": "Wavetable Software Synth with Easy Workflow",
+        "description": "An easy to use wavetable synthesizer with an intuitive workflow. Although it shares the same engine with its bigger brother SynthMaster, it comes with new features like wavetable synthesis.",
+        "link": "https://www.kv331audio.com/synthmasterone.aspx"
+      },
+      {
+        "name": "SynthMaster 2 Player",
+        "tagline": "ROMpler synth player with 2000 factory presets",
+        "description": "A simplified version of SynthMaster 2 with limited editing capabilities, targeted towards users who prefer to use presets. It comes with 2000 factory presets.",
+        "link": "https://www.kv331audio.com/synthmasterplayer.aspx"
+      }
+    ],
+    "mobile": [
+      {
+        "name": "SynthMaster 2 for iOS",
+        "tagline": "Award Winner Synth with Awesome Presets on your iPad",
+        "description": "The mobile version of the award-winning software synthesizer for iPad.",
+        "link": "https://www.kv331audio.com/synthmasterios.aspx"
+      },
+      {
+        "name": "SynthMaster One iOS",
+        "tagline": "Wavetable Software Synthesizer",
+        "description": "The mobile version of SynthMaster One for iPad and iPhone.",
+        "link": "https://www.kv331audio.com/synthmasteroneios.aspx"
+      }
+    ]
+  }
+}

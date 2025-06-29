@@ -1,0 +1,40 @@
+{
+  "faq": [
+    {
+        "category": "System Requirements",
+        "question": "What are the system requirements for SynthMaster / SynthMaster Player?",
+        "answer": "CPU: 2.0 Ghz, Intel SSE3 instruction set. RAM: 2 GB. OS: Windows 7 and above, or macOS 10.9 and above. For AAX format, you need ProTools 11 and above."
+    },
+    {
+        "category": "Purchasing",
+        "question": "Do I have to create a PayPal account to make a purchase?",
+        "answer": "No, you can purchase without opening up a PayPal account."
+    },
+    {
+        "category": "Installation",
+        "question": "On how many computers am I allowed to install SynthMaster?",
+        "answer": "You are allowed to install SynthMaster and its player versions on up to 5 machines at a time."
+    },
+    {
+        "category": "Installation",
+        "question": "My DAW (Logic/GarageBand) is not detecting the AudioUnit plug-in on macOS. What should I do?",
+        "answer": "Ensure your DAW is not running during installation. After installation, you may need to clear the AudioUnits cache. In Finder, go to 'Go to Folder' and navigate to '~/Library/Caches'. Delete any folder named 'AudioUnitCache' and any file named 'com.apple.audiounits.cache', then reboot your system."
+    },
+    {
+        "category": "Preset Banks",
+        "question": "Can I use SynthMaster One expansions with SynthMaster/SynthMaster Player?",
+        "answer": "Not directly. SynthMaster One is a different product. However, SynthMaster 3 is able to load SynthMaster One presets as layers."
+    },
+    {
+        "category": "Refund & Return Policy",
+        "question": "Can I get a refund if the product doesn't work on my system?",
+        "answer": "Please contact us first to resolve the issue. As per our license agreement, if we cannot resolve the issue in 7 business days, we will refund your purchase amount."
+    },
+    {
+        "category": "License Transfer",
+        "question": "Can I transfer my license to somebody else?",
+        "answer": "Yes, you can transfer your license. When you find a buyer, contact us. The transfer fee is $15."
+    }
+  ]
+}
+
