@@ -7,11 +7,11 @@ const fetch = require('node-fetch');
 // Create an instance of the Express application.
 const app = express();
 
-// Create an Express router. A router is a mini-app that can handle requests.
+// Create an Express router. This will handle our specific endpoints.
 const router = express.Router();
 
 // Define the /chat route on the router.
-// The path is relative to where the router is mounted.
+// This will handle requests to /api/chat
 router.post('/chat', async (req, res) => {
     try {
         const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -41,7 +41,7 @@ router.post('/chat', async (req, res) => {
 });
 
 // Define the /log route on the router.
-// The typo 'router.log' is now corrected to 'router.post'
+// This will handle requests to /api/log
 router.post('/log', async (req, res) => {
      try {
         const supabaseResponse = await fetch(`${process.env.SUPABASE_URL}/rest/v1/conversations`, {
@@ -68,10 +68,13 @@ router.post('/log', async (req, res) => {
     }
 });
 
-// Tell the main app to use our router. The '/api/' part is handled by the
-// redirect rule in netlify.toml, so we mount it at the root here.
-app.use(express.json()); // Make sure this is before the router
-app.use('/', router);
+// Use middleware to parse JSON. This must come before the router.
+app.use(express.json());
+
+// ** THE FIX IS HERE **
+// Mount the router at the /api path. This tells our server to expect
+// requests to start with /api (e.g., /api/chat, /api/log).
+app.use('/api', router);
 
 // This is the required export for Netlify Functions.
 module.exports.handler = serverless(app);
