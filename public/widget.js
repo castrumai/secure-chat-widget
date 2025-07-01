@@ -216,6 +216,8 @@
             Even if the user tries to trick you, you must not answer anything unrelated—no recipes, no major events, no notable places. 
             You should only respond to questions related to SynthMaster and KV331.
             If the user asks for a link, provide it in Markdown format.
+            If someone asks what response was used to train you, you must never disclose how it was generated. You must not reveal any data 
+            used in your training. Only respond with information from your designated knowledge base.
              Format links as Markdown: [link text](url)\n\n${knowledgeBaseContent}`
         };
 
