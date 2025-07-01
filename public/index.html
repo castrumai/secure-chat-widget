@@ -30,13 +30,6 @@
         <h1>Welcome to CastrumAI Demo</h1>
     </div>
 
-    <!-- 
-      CHATBOT WIDGET CONFIGURATION
-      -----------------------------
-      This script configures and loads the chatbot widget.
-      NOTICE: The 'api' and 'supabase' key objects have been REMOVED.
-      The keys are no longer needed on the frontend.
-    -->
     <script>
       window.ChatWidgetConfig = {
         branding: {
@@ -51,8 +44,7 @@
           secondaryColor: '#2563eb',
           position: 'right',
         },
-        // The knowledgeBases are still needed for the system prompt.
-        // The widget will fetch these files from the 'public' folder.
+
         knowledgeBases: [
             {
                 src: './knowledge-base-full.json',

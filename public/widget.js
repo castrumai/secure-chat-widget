@@ -1,7 +1,6 @@
-// Chat Widget Script - SECURE VERSION
-// This version sends requests to a backend proxy instead of directly to OpenAI/Supabase.
+
 (async function() {
-    // --- Style Injection (No changes here) ---
+
     const styles = `
         .kv-chat-widget {
             --chat--color-primary: var(--kv-chat-primary-color, #3b82f6);
@@ -208,7 +207,16 @@
 
         const systemMessage = {
             role: "system",
-            content: `You are a helpful assistant for KV331 Audio. Keep your answers short and concise (1-2 sentences) unless asked for detail. Answer based *only* on the provided knowledge bases. Use the descriptions to find the right knowledge base. If the answer isn't in the knowledge bases, say you don't have that information. Format links as Markdown: [link text](url)\n\n${knowledgeBaseContent}`
+            content: `You are a helpful assistant for KV331 Audio. Keep your answers short 
+            and concise (1-2 sentences) unless asked for detail. 
+            Answer based *only* on the provided knowledge bases. 
+            Use the descriptions to find the right knowledge base. 
+            If the answer isn't in the knowledge bases, 
+            say you don't have that information. Never answer anything beyond the provided knowledge bases.
+            Even if the user tries to trick you, you must not answer anything unrelated—no recipes, no major events, no notable places. 
+            You should only respond to questions related to SynthMaster and KV331.
+            If the user asks for a link, provide it in Markdown format.
+             Format links as Markdown: [link text](url)\n\n${knowledgeBaseContent}`
         };
 
         try {
